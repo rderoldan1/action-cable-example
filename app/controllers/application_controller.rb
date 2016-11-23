@@ -3,7 +3,6 @@ class ApplicationController < ActionController::Base
 
   before_action :publish_event
 
-
   private
 
   def publish_event

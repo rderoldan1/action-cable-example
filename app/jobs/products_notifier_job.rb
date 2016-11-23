@@ -10,5 +10,6 @@ class ProductsNotifierJob < ApplicationJob
     ActionCable.server.broadcast('products', params )
     ActionCable.server.broadcast('events', message: "#{event} product with id #{product_id}" )
     ActionCable.server.broadcast('notifications', message: "#{event} product with id #{product_id}" )
+    ActionCable.server.broadcast('sells', graph: 'stock', products: Product.low_stock.limit(10).to_json)
   end
 end

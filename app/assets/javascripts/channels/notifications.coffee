@@ -1,5 +1,10 @@
 $(document).on 'turbolinks:load', ->
   if $('body').data('controller') != 'dashboard'
+
+
+
+
+
     App.notifications = App.cable.subscriptions.create "NotificationsChannel",
      connected: ->
         # Called when the subscription is ready for use on the server
@@ -16,3 +21,7 @@ $(document).on 'turbolinks:load', ->
           showProgressbar: true,
           delay: 2000
         })
+
+
+
+
