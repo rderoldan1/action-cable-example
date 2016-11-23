@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Store</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= action_cable_meta_tag %>
+
+  </head>
+
+  <body data-controller="<%= request[:controller] %>" data-action="<%= request[:action] %>">
+  <nav class="navbar navbar-dark bg-inverse">
+    <%= link_to "GAP Store", root_path, class: "navbar-brand" %>
+    <ul class="nav navbar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link" href="movies/new">Sell</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/dashboard/index">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/products">Producs</a>
+      </li>
+    </ul>
+    <form class="form-inline pull-xs-right">
+      <input class="form-control" type="text" placeholder="Search">
+      <button class="btn btn-success-outline" type="submit">Search</button>
+    </form>
+  </nav>
+
+  <div class="container-fluid">
+    <%= yield %>
+  </div>
+  </body>
+</html>
